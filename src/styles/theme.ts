@@ -33,6 +33,7 @@ export const theme = createTheme({
       fontSize: 16,
       lineHeight: 24,
     },
+    defaults: {},
   },
 });
 

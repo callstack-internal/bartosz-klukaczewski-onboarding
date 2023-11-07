@@ -9,7 +9,11 @@ const Stack = createNativeStackNavigator();
 
 const StackNavigator: React.FC = () => (
   <Stack.Navigator>
-    <Stack.Screen name={Route.WeatherList} component={WeatherListScreen} />
+    <Stack.Screen
+      name={Route.WeatherList}
+      component={WeatherListScreen}
+      options={{title: 'Weather'}}
+    />
     <Stack.Screen name={Route.WeatherDetail} component={WeatherDetailScreen} />
   </Stack.Navigator>
 );
