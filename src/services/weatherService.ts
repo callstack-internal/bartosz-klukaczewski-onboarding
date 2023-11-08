@@ -39,7 +39,7 @@ const normalizeOpenWeatherData = (
   pressure: input.main?.pressure,
   windSpeed: input.wind.speed,
   cloudCoverage: input.clouds.all,
-  icon: input.weather[0].icon,
+  icon: input.weather[0].icon as keyof types.Icons,
 });
 
 export const getWeatherList = async () => {

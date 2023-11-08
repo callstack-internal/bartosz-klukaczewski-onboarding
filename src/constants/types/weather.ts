@@ -1,3 +1,7 @@
+import type {Icons} from 'app/components/WeatherIcon';
+
+export type {Icons} from 'app/components/WeatherIcon';
+
 export interface OpenWeatherWeather {
   id: number;
   name: string;
@@ -51,5 +55,5 @@ export interface Weather {
   pressure: number;
   windSpeed: number;
   cloudCoverage: number;
-  icon: string;
+  icon: keyof Icons;
 }
