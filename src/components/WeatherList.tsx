@@ -10,7 +10,7 @@ interface Props {
   data: types.Weather[];
 }
 
-const WeatherList: React.FC<Props> = ({data}) => {
+const WeatherList = ({data}: Props) => {
   const renderItem = useCallback(
     ({item}: ListRenderItemInfo<types.Weather>) => (
       <WeatherListItem locationWeather={item} />

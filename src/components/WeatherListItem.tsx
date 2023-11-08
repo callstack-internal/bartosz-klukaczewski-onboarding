@@ -12,7 +12,7 @@ interface Props {
   locationWeather: types.Weather;
 }
 
-const WeatherListItem: React.FC<Props> = ({
+const WeatherListItem = ({
   locationWeather: {
     locationName,
     temperature,
@@ -20,7 +20,7 @@ const WeatherListItem: React.FC<Props> = ({
     icon,
     weatherStatus,
   },
-}) => (
+}: Props) => (
   <Box
     flex={1}
     backgroundColor="mainBackground"

@@ -11,7 +11,7 @@ const Text = createText<Theme>();
 
 type Props = ScreenProp<Route.WeatherList>;
 
-const WeatherListScreen: React.FC<Props> = () => {
+const WeatherListScreen = ({}: Props) => {
   const query = useQuery({queryKey: ['weatherList'], queryFn: getWeatherList});
 
   if (query.isPending) {
