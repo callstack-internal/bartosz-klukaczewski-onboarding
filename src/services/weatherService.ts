@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Config from 'react-native-config';
 
 import {types} from 'app/constants';
 
@@ -10,8 +11,7 @@ const client = axios.create({
   timeout: 30000,
 });
 
-// TODO: add react-native-config, move key to .env file and remove key from the repo
-const OpenWeatherAPIKey = '';
+const OpenWeatherAPIKey = Config.OPEN_WEATHER_API_KEY;
 
 const cities = [
   703448, // Kyiv, UA
