@@ -7,7 +7,7 @@ import {Route} from './routes';
 
 const Stack = createNativeStackNavigator();
 
-const StackNavigator = () => (
+const StackNavigator: React.FC = () => (
   <Stack.Navigator>
     <Stack.Screen
       name={Route.WeatherList}

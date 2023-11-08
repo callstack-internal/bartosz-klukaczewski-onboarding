@@ -30,14 +30,16 @@ const cities = [
 const normalizeOpenWeatherData = (
   input: types.OpenWeatherWeather,
 ): types.Weather => ({
+  id: input.id.toString(),
   locationName: input.name,
   weatherStatus: input.weather[0].main,
   temperature: input.main?.temp,
   temperatureUnit: '℃',
+  humidity: input.main.humidity,
   pressure: input.main?.pressure,
   windSpeed: input.wind.speed,
   cloudCoverage: input.clouds.all,
-  icon: '',
+  icon: input.weather[0].icon,
 });
 
 export const getWeatherList = async () => {
@@ -48,6 +50,7 @@ export const getWeatherList = async () => {
       units: 'metric',
     },
   });
+  // The API is a mess, it returns 200 even when error occurred
   if (response.data.list) {
     return response.data.list.map(normalizeOpenWeatherData) as types.Weather[];
   }

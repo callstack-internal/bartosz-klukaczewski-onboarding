@@ -42,10 +42,12 @@ export interface OpenWeatherWeather {
 }
 
 export interface Weather {
+  id: string;
   locationName: string;
   weatherStatus: string;
   temperature: number;
   temperatureUnit: string;
+  humidity: number;
   pressure: number;
   windSpeed: number;
   cloudCoverage: number;

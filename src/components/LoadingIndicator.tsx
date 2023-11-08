@@ -6,7 +6,7 @@ import {Theme} from 'app/styles';
 
 const Container = createBox<Theme>();
 
-const LoadingIndicator: React.FC = () => (
+const LoadingIndicator = () => (
   <Container
     flex={1}
     alignItems={'center'}
