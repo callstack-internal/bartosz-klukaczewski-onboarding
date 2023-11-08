@@ -11,16 +11,16 @@ import {types} from 'app/constants';
 
 import {Route} from './routes';
 
-export type NavigationParams = {
-  [Route.WeatherList]: undefined | {};
+export type NavigationParamList = {
+  [Route.WeatherList]: undefined;
   [Route.WeatherDetail]: {
     weather: types.Weather;
   };
 };
 
-export type ScreenProp<R extends keyof NavigationParams> =
-  NativeStackScreenProps<NavigationParams, R>;
+export type ScreenProp<R extends keyof NavigationParamList> =
+  NativeStackScreenProps<NavigationParamList, R>;
 
-export type RouteProp = NativeStackNavigationProp<NavigationParams>;
+export type RouteProp = NativeStackNavigationProp<NavigationParamList>;
 
 export const useNavigation = () => _useNavigation<RouteProp>();
