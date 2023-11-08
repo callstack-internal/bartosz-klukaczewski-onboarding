@@ -3,7 +3,7 @@ import React from 'react';
 
 import StackNavigator from './StackNavigator';
 
-const RootNavigator: React.FC = () => (
+const RootNavigator = () => (
   <NavigationContainer>
     <StackNavigator />
   </NavigationContainer>
