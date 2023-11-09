@@ -1,7 +1,7 @@
 import React from 'react';
 
 import GenericListItem from 'app/components/GenericListItem';
-import {render, screen} from 'app/utils/testUtils';
+import {renderWithTheme, screen} from 'app/testing';
 
 const props = {
   label: 'Humidity',
@@ -10,11 +10,11 @@ const props = {
 
 describe('GenericListItem component', () => {
   it('should render when data is provided', () => {
-    render(<GenericListItem {...props} />);
+    renderWithTheme(<GenericListItem {...props} />);
   });
 
   it('should render label and value', async () => {
-    render(<GenericListItem {...props} />);
+    renderWithTheme(<GenericListItem {...props} />);
     const label = await screen.findByTestId('GenericListItemLabel');
     expect(label).toHaveTextContent(props.label);
 

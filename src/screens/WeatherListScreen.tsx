@@ -19,7 +19,7 @@ const WeatherListScreen = ({}: Props) => {
   }
 
   if (query.isError) {
-    return <Text>{query.error.message}</Text>;
+    return <Text testID="WeatherListScreenError">{query.error.message}</Text>;
   }
 
   return <WeatherList data={query.data} />;

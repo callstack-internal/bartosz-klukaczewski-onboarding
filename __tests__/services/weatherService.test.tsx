@@ -1,6 +1,6 @@
 import {types} from 'app/constants';
 import {normalizeOpenWeatherData} from 'app/services/weatherService';
-import {weather} from 'app/utils/testUtils';
+import {weather} from 'app/testing';
 
 describe('WeatherService', () => {
   it('should properly convert OpenWeather API objects', () => {

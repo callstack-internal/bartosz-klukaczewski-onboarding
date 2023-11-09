@@ -1,12 +1,7 @@
 import React from 'react';
 
 import WeatherListItem from 'app/components/WeatherListItem';
-import {
-  weather,
-  renderWithNavigation,
-  screen,
-  fireEvent,
-} from 'app/utils/testUtils';
+import {weather, renderWithNavigation, screen, fireEvent} from 'app/testing';
 
 const mockedNavigate = jest.fn();
 jest.mock('@react-navigation/native', () => {

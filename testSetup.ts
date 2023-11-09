@@ -1,6 +1,5 @@
 import '@testing-library/jest-native/extend-expect';
-
-jest.useFakeTimers();
+import {mswServer} from 'app/testing';
 
 jest.mock('@shopify/restyle', () => {
   const RealModule = jest.requireActual('@shopify/restyle');
@@ -11,4 +10,6 @@ jest.mock('@shopify/restyle', () => {
   return RealModule;
 });
 
-export {};
+beforeEach(() => mswServer.listen());
+afterEach(() => mswServer.resetHandlers());
+afterAll(() => mswServer.close());
