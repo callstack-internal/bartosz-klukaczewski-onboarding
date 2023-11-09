@@ -19,8 +19,10 @@ const GenericListItem = ({label, value}: Props) => (
     paddingVertical="m"
     borderBottomColor="divider"
     borderBottomWidth={1}>
-    <Text variant="body">{label}</Text>
-    <Text variant="body" color="textMuted">
+    <Text testID="GenericListItemLabel" variant="body">
+      {label}
+    </Text>
+    <Text testID="GenericListItemValue" variant="body" color="textMuted">
       {value}
     </Text>
   </Box>

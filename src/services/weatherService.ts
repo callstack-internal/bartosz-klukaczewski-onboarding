@@ -27,16 +27,16 @@ const cities = [
   5128581, // New York City, US
 ];
 
-const normalizeOpenWeatherData = (
+export const normalizeOpenWeatherData = (
   input: types.OpenWeatherWeather,
 ): types.Weather => ({
   id: input.id.toString(),
   locationName: input.name,
   weatherStatus: input.weather[0].main,
-  temperature: input.main?.temp,
+  temperature: input.main.temp,
   temperatureUnit: '℃',
   humidity: input.main.humidity,
-  pressure: input.main?.pressure,
+  pressure: input.main.pressure,
   windSpeed: input.wind.speed,
   cloudCoverage: input.clouds.all,
   icon: input.weather[0].icon as keyof types.Icons,
