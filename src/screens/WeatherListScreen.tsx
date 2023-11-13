@@ -9,7 +9,7 @@ import {Theme} from 'app/styles';
 
 const Text = createText<Theme>();
 
-type Props = ScreenProp<Route.WeatherList>;
+type Props = ScreenProp<typeof Route.WeatherList>;
 
 const WeatherListScreen = ({}: Props) => {
   const query = useQuery({queryKey: ['weatherList'], queryFn: getWeatherList});
