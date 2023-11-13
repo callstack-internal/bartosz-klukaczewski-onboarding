@@ -15,6 +15,7 @@ jest.mock('@react-navigation/native', () => {
 });
 
 const props = {weather};
+const buttonTestId = `WeatherListItemButton${weather.locationName}`;
 
 describe('WeatherListItem component', () => {
   beforeEach(() => {
@@ -27,32 +28,32 @@ describe('WeatherListItem component', () => {
 
   it('should call navigate on press', async () => {
     renderWithNavigation(<WeatherListItem {...props} asButton />);
-    const button = await screen.findByTestId('WeatherListItemButton');
+    const button = await screen.findByTestId(buttonTestId);
     fireEvent.press(button);
     expect(mockedNavigate).toHaveBeenCalledTimes(1);
   });
 
   it('should enable button if asButton is provided', async () => {
     renderWithNavigation(<WeatherListItem {...props} asButton />);
-    const button = await screen.findByTestId('WeatherListItemButton');
+    const button = await screen.findByTestId(buttonTestId);
     expect(button).toBeEnabled();
   });
 
   it('should disable button if asButton is not provided', async () => {
     renderWithNavigation(<WeatherListItem {...props} />);
-    const button = await screen.findByTestId('WeatherListItemButton');
+    const button = await screen.findByTestId(buttonTestId);
     expect(button).toBeDisabled();
   });
 
-  it('should render chevron if asButton is provided', async () => {
+  it('should render chevron if asButton is provided', () => {
     renderWithNavigation(<WeatherListItem {...props} asButton />);
-    const chevron = await screen.findByTestId('WeatherListItemChevronRight');
+    const chevron = screen.queryByTestId('WeatherListItemChevronRight');
     expect(chevron).toBeTruthy();
   });
 
-  it('should not render chevron if asButton is not provided', async () => {
+  it('should not render chevron if asButton is not provided', () => {
     renderWithNavigation(<WeatherListItem {...props} />);
-    const chevron = await screen.queryByTestId('WeatherListItemChevronRight');
+    const chevron = screen.queryByTestId('WeatherListItemChevronRight');
     expect(chevron).toBeFalsy();
   });
 });
