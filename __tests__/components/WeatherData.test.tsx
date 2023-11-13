@@ -10,11 +10,11 @@ describe('WeatherData component', () => {
     renderWithTheme(<WeatherData {...props} />);
   });
 
-  it('should render all 4 rows with labels and values', async () => {
+  it('should render all 4 rows with labels and values', () => {
     renderWithTheme(<WeatherData {...props} />);
-    const labels = await screen.findAllByTestId('GenericListItemLabel');
+    const labels = screen.queryAllByTestId('GenericListItemLabel');
     expect(labels.length).toBe(4);
-    const values = await screen.findAllByTestId('GenericListItemValue');
+    const values = screen.queryAllByTestId('GenericListItemValue');
     expect(values.length).toBe(4);
   });
 });

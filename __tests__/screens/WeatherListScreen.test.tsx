@@ -12,9 +12,9 @@ describe('WeatherListScreen component', () => {
     renderAsScreen(WeatherListScreen, 'weatherList');
   });
 
-  it('should render loading indicator when data is not yet available', async () => {
+  it('should render loading indicator when data is not yet available', () => {
     renderAsScreen(WeatherListScreen);
-    const loadingIndicator = await screen.findByRole('progressbar', {
+    const loadingIndicator = screen.queryByRole('progressbar', {
       busy: true,
     });
     expect(loadingIndicator).toBeTruthy();
