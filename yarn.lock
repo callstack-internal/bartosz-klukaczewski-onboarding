@@ -2863,6 +2863,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/add@npm:^2":
+  version: 2.0.2
+  resolution: "@types/add@npm:2.0.2"
+  checksum: 18ed6e93eb0c0e96b5b30d554bc44f2f2dca40e367ce08283bb7740f9caf8e4a562f723b8c8cc64fb83b6584ec302e6ea8898f9f840950f1043e8a4241e03407
+  languageName: node
+  linkType: hard
+
 "@types/babel__core@npm:^7.1.14":
   version: 7.20.4
   resolution: "@types/babel__core@npm:7.20.4"
@@ -3307,10 +3314,12 @@ __metadata:
     "@testing-library/jest-native": "npm:^5.4.3"
     "@testing-library/react-native": "npm:^12.3.2"
     "@tsconfig/react-native": "npm:^3.0.0"
+    "@types/add": "npm:^2"
     "@types/jest": "npm:^29.5.8"
     "@types/react": "npm:^18.0.24"
     "@types/react-native-vector-icons": "npm:^6.4.17"
     "@types/react-test-renderer": "npm:^18.0.0"
+    add: "npm:^2.0.6"
     axios: "npm:^1.6.0"
     babel-jest: "npm:^29.2.1"
     babel-plugin-module-resolver: "npm:^5.0.0"
@@ -3324,11 +3333,13 @@ __metadata:
     react: "npm:18.2.0"
     react-native: "npm:0.72.6"
     react-native-config: "npm:^1.5.1"
+    react-native-permissions: "npm:^3.10.1"
     react-native-safe-area-context: "npm:^4.7.4"
     react-native-screens: "npm:^3.27.0"
     react-native-vector-icons: "npm:^10.0.1"
     react-test-renderer: "npm:18.2.0"
     typescript: "npm:4.8.4"
+    yarn: "npm:^1.22.20"
   languageName: unknown
   linkType: soft
 
@@ -3373,6 +3384,13 @@ __metadata:
   bin:
     acorn: bin/acorn
   checksum: a3ed76c761b75ec54b1ec3068fb7f113a182e95aea7f322f65098c2958d232e3d211cb6dac35ff9c647024b63714bc528a26d54a925d1fef2c25585b4c8e4017
+  languageName: node
+  linkType: hard
+
+"add@npm:^2.0.6":
+  version: 2.0.6
+  resolution: "add@npm:2.0.6"
+  checksum: 6b21d5f2e58cf5e15d56cc6f9ebce04f04f4c33ae25f09d600ddacf8df00036ba521f17feb1b3f81307b7c6d2ef0bed8b511a0f86f062eb90c2f909b48b588ae
   languageName: node
   linkType: hard
 
@@ -9180,6 +9198,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-native-permissions@npm:^3.10.1":
+  version: 3.10.1
+  resolution: "react-native-permissions@npm:3.10.1"
+  peerDependencies:
+    react: ">=16.13.1"
+    react-native: ">=0.63.3"
+    react-native-windows: ">=0.62.0"
+  peerDependenciesMeta:
+    react-native-windows:
+      optional: true
+  checksum: 3d1f4f36aa17aafb5d15bf3a246452bddcd967b281cc447d9f7001f95f9765638d4f803faf8baff842bda4a5bd689810aada7997b88cd551544c9bfb68889bcf
+  languageName: node
+  linkType: hard
+
 "react-native-safe-area-context@npm:^4.7.4":
   version: 4.7.4
   resolution: "react-native-safe-area-context@npm:4.7.4"
@@ -11227,6 +11259,16 @@ __metadata:
     y18n: "npm:^5.0.5"
     yargs-parser: "npm:^21.1.1"
   checksum: ccd7e723e61ad5965fffbb791366db689572b80cca80e0f96aad968dfff4156cd7cd1ad18607afe1046d8241e6fb2d6c08bf7fa7bfb5eaec818735d8feac8f05
+  languageName: node
+  linkType: hard
+
+"yarn@npm:^1.22.20":
+  version: 1.22.20
+  resolution: "yarn@npm:1.22.20"
+  bin:
+    yarn: bin/yarn.js
+    yarnpkg: bin/yarn.js
+  checksum: 0f53a824ac311b0fe9cb3908d4cb18503a3666f14fe4add62758dc5156d83b7c0406b24bb95e1332b711387a37a05556e6d205ae515f2ebecbb8e666d758b73b
   languageName: node
   linkType: hard
 

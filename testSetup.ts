@@ -1,5 +1,10 @@
 import '@testing-library/jest-native/extend-expect';
+// @ts-ignore
+import mockReactNativePermissions from 'react-native-permissions/mock';
+
 import {mswServer} from 'app/testing';
+
+jest.mock('react-native-permissions', () => mockReactNativePermissions);
 
 jest.mock('@shopify/restyle', () => {
   const RealModule = jest.requireActual('@shopify/restyle');
