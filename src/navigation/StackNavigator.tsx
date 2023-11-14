@@ -14,7 +14,7 @@ const StackNavigator: React.FC = () => (
     <Stack.Screen
       name={Route.WeatherList}
       component={WeatherListScreen}
-      options={{title: 'Weather', headerRight: () => <LocationButton />}}
+      options={{title: 'Weather', headerRight: LocationButton}}
     />
     <Stack.Screen name={Route.WeatherDetail} component={WeatherDetailScreen} />
   </Stack.Navigator>

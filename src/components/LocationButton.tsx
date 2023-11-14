@@ -5,18 +5,26 @@ import {RESULTS} from 'react-native-permissions';
 import {types} from 'app/constants';
 import {
   checkLocationPermission,
+  getLocation,
   requestLocationPermission,
 } from 'app/services/locationService';
 
 const LocationButton = () => {
   const [permissionStatus, setPermissionStatus] =
     useState<types.PermissionStatus | null>(null);
+  const [location, setLocation] = useState<types.Position | null>(null);
 
   useEffect(() => {
     checkLocationPermission().then(setPermissionStatus);
   }, []);
 
-  const requestPermission = () => {
+  useEffect(() => {
+    if (permissionStatus === RESULTS.GRANTED) {
+      getLocation(setLocation, error => console.log(error));
+    }
+  }, [permissionStatus]);
+
+  const requestPermission = async () => {
     if (permissionStatus === RESULTS.DENIED) {
       requestLocationPermission().then(setPermissionStatus);
     }
@@ -31,10 +39,14 @@ const LocationButton = () => {
   const buttonTitle = {
     [RESULTS.DENIED]: 'Get permission',
     [RESULTS.BLOCKED]: 'Permission not granted',
-    [RESULTS.GRANTED]: 'lat,long',
-    [RESULTS.LIMITED]: 'lat,long',
+    [RESULTS.GRANTED]: location
+      ? `${location.latitude.toFixed(2)}, ${location.longitude.toFixed(2)}`
+      : 'locating...',
+    [RESULTS.LIMITED]: location
+      ? `${location.latitude.toFixed(2)}, ${location.longitude.toFixed(2)}`
+      : 'locating...',
     [RESULTS.UNAVAILABLE]: 'Location unavailable',
-  };
+  } as const;
 
   return (
     permissionStatus && (
@@ -46,4 +58,4 @@ const LocationButton = () => {
   );
 };
 
-export default React.memo(LocationButton);
+export default LocationButton;
