@@ -6,7 +6,7 @@ import WeatherListItem from 'app/components/WeatherListItem';
 import {Route, ScreenProp} from 'app/navigation';
 import {theme} from 'app/styles';
 
-type Props = ScreenProp<Route.WeatherDetail>;
+type Props = ScreenProp<typeof Route.WeatherDetail>;
 
 const WeatherDetailScreen = ({route}: Props) => {
   const {weather} = route.params;

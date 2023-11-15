@@ -9,7 +9,7 @@ import {Theme} from 'app/styles';
 
 const Text = createText<Theme>();
 
-type Props = ScreenProp<Route.WeatherList>;
+type Props = ScreenProp<typeof Route.WeatherList>;
 
 const WeatherListScreen = ({}: Props) => {
   const query = useQuery({queryKey: ['weatherList'], queryFn: getWeatherList});
@@ -19,7 +19,7 @@ const WeatherListScreen = ({}: Props) => {
   }
 
   if (query.isError) {
-    return <Text>{query.error.message}</Text>;
+    return <Text testID="WeatherListScreenError">{query.error.message}</Text>;
   }
 
   return <WeatherList data={query.data} />;

@@ -1,0 +1,41 @@
+appId: com.weatherapp
+---
+- launchApp
+- assertVisible: 'Weather'
+- assertVisible:
+    id: 'WeatherListItemButtonWarsaw'
+- tapOn:
+    id: 'WeatherListItemButtonWarsaw'
+
+- assertVisible: 'WeatherDetail'
+- assertVisible: 'Humidity'
+- assertVisible: 'Pressure'
+- assertVisible: 'Wind speed'
+- assertVisible: 'Cloud coverage'
+
+- runFlow:
+    when:
+      platform: Android
+    commands:
+      - tapOn: 'Navigate up'
+- runFlow:
+    when:
+      platform: iOS
+    commands:
+      - tapOn: 'Weather'
+
+- assertVisible: 'Weather'
+
+- scrollUntilVisible:
+    element:
+      id: "WeatherListItemButtonWashington"
+
+- assertVisible:
+    id: 'WeatherListItemButtonWashington'
+- tapOn:
+    id: 'WeatherListItemButtonWashington'
+
+- assertVisible: 'Humidity'
+- assertVisible: 'Pressure'
+- assertVisible: 'Wind speed'
+- assertVisible: 'Cloud coverage'

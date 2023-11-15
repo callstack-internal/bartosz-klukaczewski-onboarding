@@ -3,7 +3,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import {theme} from 'app/styles';
 
-const icons: Record<string, string> = {
+const icons = {
   '01d': 'weather-sunny',
   '01n': 'weather-night',
   '02d': 'weather-partly-cloudy',
@@ -22,10 +22,12 @@ const icons: Record<string, string> = {
   '13n': 'weather-snowy',
   '50d': 'weather-fog',
   '50n': 'weather-fog',
-};
+} as const;
+
+export type Icons = typeof icons;
 
 interface Props {
-  icon: string;
+  icon: keyof Icons;
 }
 
 export const WeatherIcon = ({icon}: Props) => (

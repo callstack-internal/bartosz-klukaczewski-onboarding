@@ -12,7 +12,12 @@ const LoadingIndicator = () => (
     alignItems={'center'}
     justifyContent={'center'}
     paddingBottom="xl">
-    <ActivityIndicator size="large" />
+    <ActivityIndicator
+      accessible
+      size="large"
+      role="progressbar"
+      accessibilityState={{busy: true}}
+    />
   </Container>
 );
 

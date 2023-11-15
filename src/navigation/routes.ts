@@ -1,4 +1,4 @@
-export enum Route {
-  WeatherList = 'WeatherList',
-  WeatherDetail = 'WeatherDetail',
-}
+export const Route = {
+  WeatherList: 'WeatherList',
+  WeatherDetail: 'WeatherDetail',
+} as const;

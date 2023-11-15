@@ -29,6 +29,7 @@ const WeatherListItem = ({weather, asButton}: Props) => {
 
   return (
     <TouchableHighlight
+      testID={`WeatherListItemButton${locationName}`}
       disabled={!asButton}
       activeOpacity={0.9}
       underlayColor={theme.colors.mainBackgroundDarker}
@@ -46,7 +47,9 @@ const WeatherListItem = ({weather, asButton}: Props) => {
           <WeatherIcon icon={icon} />
         </Box>
         <Box flex={1}>
-          <Text variant="subtitle">{locationName}</Text>
+          <Text testID={`${locationName}Label`} variant="subtitle">
+            {locationName}
+          </Text>
           <Text variant="body">{weatherStatus}</Text>
         </Box>
         <Box>
@@ -63,6 +66,7 @@ const WeatherListItem = ({weather, asButton}: Props) => {
         {asButton && (
           <Box justifyContent="center" alignItems="center" paddingStart="s">
             <Icon
+              testID="WeatherListItemChevronRight"
               name="chevron-right"
               size={32}
               color={theme.colors.iconDark}
