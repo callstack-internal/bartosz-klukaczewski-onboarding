@@ -1,0 +1,27 @@
+name: Continuous Integration
+run-name: ${{ github.actor }} is running CI check 🚀
+on: pull_request
+
+jobs:
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code repository
+        uses: actions/checkout@v4
+
+      - name: NodeJS setup
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.tool-versions'
+
+      - name: Install yarn dependencies
+        run: yarn install
+
+      - name: TypeScript check
+        run: yarn typescript
+
+      - name: ESLint check
+        run: yarn lint
+
+      - name: Jest tests
+        run: yarn test

@@ -8,5 +8,9 @@ module.exports = {
         ios: null,
       },
     },
+    // to fix build issues with FlipperKit when NO_FLIPPER is set to 1
+    ...(process.env.NO_FLIPPER
+      ? {'react-native-flipper': {platforms: {ios: null}}}
+      : {}),
   },
 };
